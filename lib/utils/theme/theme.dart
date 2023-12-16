@@ -11,7 +11,7 @@ import 'package:swift_cart/utils/theme/custom_themes/text_theme.dart';
 class ZAppTheme {
   ZAppTheme._();
 
-  // Light Theme
+  //App Light Theme
   static ThemeData lightTheme = ThemeData(
     useMaterial3: true,
     fontFamily: "Poppins",
@@ -28,7 +28,7 @@ class ZAppTheme {
     inputDecorationTheme: ZTextFormFieldTheme.lightInputDecorationTheme,
   );
 
-  // Dark Theme
+  //App Dark Theme
   static ThemeData darkTheme = ThemeData(
     useMaterial3: true,
     fontFamily: "Poppins",
