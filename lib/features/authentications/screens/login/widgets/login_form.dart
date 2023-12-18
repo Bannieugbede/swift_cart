@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:swift_cart/features/authentications/screens/password_configuration/forget_password.dart';
 import 'package:swift_cart/features/authentications/screens/signup/signup.dart';
+import 'package:swift_cart/navigation_menu.dart';
 import 'package:swift_cart/utils/constants/sizes.dart';
 import 'package:swift_cart/utils/constants/text_strings.dart';
 
@@ -58,7 +59,7 @@ class LoginForm extends StatelessWidget {
             SizedBox(
               width: double.infinity,
               child: ElevatedButton(
-                onPressed: () {},
+                onPressed: () => Get.to(() => const NavigationMenu()),
                 child: const Text(ZTexts.signIn),
               ),
             ),
