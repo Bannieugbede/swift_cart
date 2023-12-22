@@ -9,7 +9,7 @@ class ZImages {
   static const String google = "assets/logos/google_logo.png";
   static const String facebook = "assets/logos/fb_logo.png";
 
-  // Onboarding images
+  // Animation images
   static const String onBoardingImage1 =
       "assets/images/on_boarding_images/Animation1.gif";
   static const String onBoardingImage2 =
@@ -21,4 +21,23 @@ class ZImages {
   static const String deliveryEmailIllustration =
       "assets/images/emailverification.png";
   static const String emailVerified = "assets/images/verified.png";
+
+  // categories icons
+  static const String goldIcon = "assets/images/verified.png";
+  // static const String emailVerified = "assets/images/verified.png";
+
+  // banners
+  static const String banner1 = "assets/images/banner1.jpg";
+  static const String banner2 = "assets/images/banner2.jpg";
+  static const String banner3 = "assets/images/banner3.jpg";
+
+  // product images
+  static const String product0 = "assets/images/product_0.png";
+  static const String product1 = "assets/images/product_1.png";
+  static const String product2 = "assets/images/product_2.png";
+  static const String product3 = "assets/images/product_3.png";
+
+  // brand images
+  static const String brand1 = "assets/images/icon_transaction3.png";
+  // static const String brand2 = "assets/images/product_1.png";
 }

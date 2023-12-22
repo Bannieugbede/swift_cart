@@ -6,7 +6,7 @@ class ZCartCounterIcon extends StatelessWidget {
   const ZCartCounterIcon({
     super.key,
     required this.onPressed,
-    this.iconColor = ZColors.white,
+    this.iconColor = ZColors.dark,
   });
 
   final VoidCallback onPressed;
@@ -32,7 +32,7 @@ class ZCartCounterIcon extends StatelessWidget {
                 "2",
                 style: Theme.of(context).textTheme.labelLarge!.apply(
                       color: ZColors.white,
-                      // fontSizeFactor: 0.8,
+                      fontSizeFactor: 0.8,
                     ),
               ),
             ),

@@ -1,9 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:swift_cart/common/widgets/custom_shapes/containers/primary_header_container.dart';
+import 'package:swift_cart/common/widgets/custom_shapes/containers/search_container.dart';
+import 'package:swift_cart/common/widgets/layouts/grid_layout.dart';
+import 'package:swift_cart/common/widgets/products_card/product_card_vertical.dart';
+import 'package:swift_cart/common/widgets/texts/section_heading.dart';
 import 'package:swift_cart/features/shop/screens/home/widgets/home_appbar.dart';
-import 'package:swift_cart/utils/constants/colors.dart';
+import 'package:swift_cart/features/shop/screens/home/widgets/home_categories.dart';
+import 'package:swift_cart/features/shop/screens/home/widgets/promo_slider.dart';
+import 'package:swift_cart/utils/constants/image_strings.dart';
 import 'package:swift_cart/utils/constants/sizes.dart';
-import 'package:swift_cart/utils/device/device_utility.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -14,26 +19,57 @@ class HomeScreen extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            ZPrimaryHeaderContainer(
+            const ZPrimaryHeaderContainer(
               child: Column(
                 children: [
                   // appbar
-                  const ZHomeAppBar(),
+                  ZHomeAppBar(),
+                  SizedBox(height: ZSizes.spaceBtwSections),
                   // search bar
-                  Container(
-                    width: ZDeviceUtils.getScreenWidth(context),
-                    padding: const EdgeInsets.all(ZSizes.md),
-                    decoration: BoxDecoration(
-                        color: Colors.transparent,
-                        borderRadius:
-                            BorderRadius.circular(ZSizes.cardRadiusLg),
-                        border: Border.all(color: ZColors.grey)),
-                  ),
+                  ZSearchContainer(text: 'search in store'),
+                  SizedBox(height: ZSizes.spaceBtwSections),
 
                   // categories
+                  // categories
+                  Padding(
+                    padding: EdgeInsets.only(left: ZSizes.defaultSpace),
+                    child: Column(
+                      children: [
+                        ZSectionHeading(
+                            title: 'Popular Categories',
+                            showActionButton: false,
+                            textColor: Colors.white),
+                        SizedBox(height: ZSizes.spaceBtwItems),
+                        // categories
+                        ZHomeCategories()
+                      ],
+                    ),
+                  )
                 ],
               ),
-            )
+            ),
+            // body
+            Padding(
+              padding: const EdgeInsets.all(ZSizes.defaultSpace),
+              child: Column(
+                children: [
+                  // promo slider
+                  const ZPromoSlider(banners: [
+                    ZImages.banner1,
+                    ZImages.banner2,
+                    ZImages.banner3
+                  ]),
+                  const SizedBox(height: ZSizes.spaceBtwSections),
+                  // heading 
+                  ZSectionHeading(title: 'Popular Products', onPressed: () {}),
+                  const SizedBox(height: ZSizes.spaceBtwItems),
+                  // popular products
+                  ZGridLayout(
+                      itemCount: 2,
+                      itemBuilder: (_, index) => const ZProductCardVertical()), 
+                ],
+              ),
+            ),
           ],
         ),
       ),

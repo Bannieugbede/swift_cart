@@ -14,11 +14,11 @@ class ZPrimaryHeaderContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ZCurvedEdgesWidget(
-      child: Container(
-        color: ZColors.primary,
-        padding: const EdgeInsets.all(0),
-        child: SizedBox(
-          height: 400,
+      child: SizedBox(
+        height: 400,
+        child: Container(
+          // padding: const EdgeInsets.only(bottom: 0),
+          color: ZColors.primary,
           child: Stack(
             children: [
               Positioned(
@@ -32,6 +32,7 @@ class ZPrimaryHeaderContainer extends StatelessWidget {
                 child: ZCircularContainer(
                     backgroundColor: ZColors.textWhite.withOpacity(0.1)),
               ),
+              child,
             ],
           ),
         ),
