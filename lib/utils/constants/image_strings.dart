@@ -27,6 +27,9 @@ class ZImages {
   // static const String emailVerified = "assets/images/verified.png";
 
   // banners
+  static const String profile0 = "assets/images/profile.png";
+
+  // banners
   static const String banner1 = "assets/images/banner1.jpg";
   static const String banner2 = "assets/images/banner2.jpg";
   static const String banner3 = "assets/images/banner3.jpg";
@@ -36,8 +39,14 @@ class ZImages {
   static const String product1 = "assets/images/product_1.png";
   static const String product2 = "assets/images/product_2.png";
   static const String product3 = "assets/images/product_3.png";
+  static const String productPS = "assets/images/Image Popular Product 1.png";
+  static const String productPS4 = "assets/images/ps4_console_blue_1.png";
+
+  // static payment method
+  static const String paypal = "assets/images/paypal.png";
+  static const String visa = "assets/images/visa2.png";
 
   // brand images
   static const String brand1 = "assets/images/icon_transaction3.png";
-  // static const String brand2 = "assets/images/product_1.png";
+  static const String brand2 = "assets/images/logo.png";
 }

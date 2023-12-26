@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
+import 'package:swift_cart/utils/constants/colors.dart';
 import 'package:swift_cart/utils/constants/sizes.dart';
 import 'package:swift_cart/utils/device/device_utility.dart';
+import 'package:swift_cart/utils/helpers/helper_functions.dart';
 
 class ZAppBar extends StatelessWidget implements PreferredSizeWidget {
   const ZAppBar(
@@ -21,6 +23,7 @@ class ZAppBar extends StatelessWidget implements PreferredSizeWidget {
 
   @override
   Widget build(BuildContext context) {
+    final dark = ZHelperFunctions.isDarkMode(context);
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: ZSizes.md),
       child: AppBar(
@@ -28,10 +31,13 @@ class ZAppBar extends StatelessWidget implements PreferredSizeWidget {
         leading: showBackArrow
             ? IconButton(
                 onPressed: () => Get.back(),
-                icon: const Icon(Iconsax.arrow_left))
-            : leadingIcon != null ? IconButton(onPressed: leadingOnPress, icon: Icon(leadingIcon)) : null,
-            title: title,
-            actions: actions,
+                icon: Icon(Iconsax.arrow_left,
+                    color: dark ? ZColors.white : ZColors.dark))
+            : leadingIcon != null
+                ? IconButton(onPressed: leadingOnPress, icon: Icon(leadingIcon))
+                : null,
+        title: title,
+        actions: actions,
       ),
     );
   }

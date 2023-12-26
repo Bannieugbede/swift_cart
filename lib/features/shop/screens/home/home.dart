@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:swift_cart/common/widgets/custom_shapes/containers/primary_header_container.dart';
 import 'package:swift_cart/common/widgets/custom_shapes/containers/search_container.dart';
 import 'package:swift_cart/common/widgets/layouts/grid_layout.dart';
-import 'package:swift_cart/common/widgets/products_card/product_card_vertical.dart';
+import 'package:swift_cart/common/widgets/products/products_card/product_card_vertical.dart';
 import 'package:swift_cart/common/widgets/texts/section_heading.dart';
+import 'package:swift_cart/features/shop/screens/all_products/all_products.dart';
 import 'package:swift_cart/features/shop/screens/home/widgets/home_appbar.dart';
 import 'package:swift_cart/features/shop/screens/home/widgets/home_categories.dart';
 import 'package:swift_cart/features/shop/screens/home/widgets/promo_slider.dart';
@@ -44,7 +46,8 @@ class HomeScreen extends StatelessWidget {
                         ZHomeCategories()
                       ],
                     ),
-                  )
+                  ),
+                  SizedBox(height: ZSizes.spaceBtwSections),
                 ],
               ),
             ),
@@ -60,13 +63,15 @@ class HomeScreen extends StatelessWidget {
                     ZImages.banner3
                   ]),
                   const SizedBox(height: ZSizes.spaceBtwSections),
-                  // heading 
-                  ZSectionHeading(title: 'Popular Products', onPressed: () {}),
+                  // heading
+                  ZSectionHeading(
+                      title: 'Popular Products',
+                      onPressed: () => Get.to(() => const AllProducts())),
                   const SizedBox(height: ZSizes.spaceBtwItems),
                   // popular products
                   ZGridLayout(
                       itemCount: 2,
-                      itemBuilder: (_, index) => const ZProductCardVertical()), 
+                      itemBuilder: (_, index) => const ZProductCardVertical()),
                 ],
               ),
             ),

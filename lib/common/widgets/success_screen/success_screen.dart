@@ -5,7 +5,12 @@ import 'package:swift_cart/utils/constants/text_strings.dart';
 import 'package:swift_cart/utils/helpers/helper_functions.dart';
 
 class SuccessScreen extends StatelessWidget {
-  const SuccessScreen({super.key, required this.image, required this.title, required this.subTitle, required this.onPressed});
+  const SuccessScreen(
+      {super.key,
+      required this.image,
+      required this.title,
+      required this.subTitle,
+      required this.onPressed});
 
   final String image, title, subTitle;
   final VoidCallback onPressed;
@@ -30,7 +35,7 @@ class SuccessScreen extends StatelessWidget {
                   style: Theme.of(context).textTheme.headlineMedium,
                   textAlign: TextAlign.center),
               const SizedBox(height: ZSizes.spaceBtwItems),
-              Text(ZTexts.yourAccountCreatedSubTitle,
+              Text(subTitle,
                   style: Theme.of(context).textTheme.labelMedium,
                   textAlign: TextAlign.center),
               const SizedBox(height: ZSizes.spaceBtwSections),
@@ -39,8 +44,7 @@ class SuccessScreen extends StatelessWidget {
               SizedBox(
                 width: double.infinity,
                 child: ElevatedButton(
-                    onPressed: onPressed,
-                    child: const Text(ZTexts.tContinue)),
+                    onPressed: onPressed, child: const Text(ZTexts.tContinue)),
               ),
             ],
           ),
